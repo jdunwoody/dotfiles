@@ -7,4 +7,7 @@ source ~/.bash/config
 if [ -f ~/.localrc ]; then
   source ~/.localrc
 fi
+
+hitch
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
