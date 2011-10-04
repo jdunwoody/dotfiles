@@ -4,8 +4,8 @@ set number
 filetype plugin indent on
 color molokai
 
-let mapleader = ","
-
+let mapleader = ";"
+set guifont=Monospace\ 10
 set encoding=utf-8
 set autoread " reload file whenever it changes on disk
 set wrapmargin=5
@@ -102,6 +102,14 @@ nmap <leader>f :FuzzyFinderFileWithFullCwd<cr>
 nmap <leader>F :FuzzyFinderTaggedFile<cr>
 nmap <leader>g :FuzzyFinderTag<cr>
 
+nmap <leader>cp :CopyPath<cr>
+
+" save file on lose of focus
+autocmd FocusLost * :wa
+
+" remove trailing whitespace
+autocmd FocusLost,BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+
 nmap <leader>t :CommandT<cr>
 " Ack
 nnoremap <leader>a :Ack
@@ -148,6 +156,9 @@ nmap <a-F7> :Ack -w <c-r><c-w><cr>
 nmap <C-Up> [e
 nmap <C-Down> ]e
 
+inoremap jj <Esc>
+nnoremap JJJJ <Nop>
+
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
     let _s=@/
@@ -159,4 +170,3 @@ function! <SID>StripTrailingWhitespaces()
     let @/=_s
     call cursor(l, c)
 endfunction
-
