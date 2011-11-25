@@ -30,5 +30,6 @@ alias migrate='rake db:migrate db:test:clone'
 alias rst='touch tmp/restart.txt'
 
 alias be='bundle exec'
+alias g='git'
 # commands starting with % for pasting from web
 alias %=' '

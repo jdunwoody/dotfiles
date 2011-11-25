@@ -96,7 +96,7 @@ map <leader>r :NERDTreeFind<cr>
 
 
 " ctrl+f to FuzzyFinder (recursive)
-nmap <C-f> :FuzzyFinderBuffer<cr>
+"nmap <C-F> :FuzzyFinderBuffer<cr>
 nmap <leader>b :FuzzyFinderBuffer<cr>
 nmap <leader>f :FuzzyFinderFileWithFullCwd<cr>
 nmap <leader>F :FuzzyFinderTaggedFile<cr>
@@ -111,6 +111,7 @@ autocmd FocusLost * :wa
 autocmd FocusLost,BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
 nmap <leader>t :CommandT<cr>
+let g:CommandTMaxFiles=20000
 " Ack
 nnoremap <leader>a :Ack
 
