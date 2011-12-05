@@ -111,7 +111,7 @@ autocmd FocusLost * :wa
 autocmd FocusLost,BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
 nmap <leader>t :CommandT<cr>
-let g:CommandTMaxFiles=20000
+let g:CommandTMaxFiles=25000
 " Ack
 nnoremap <leader>a :Ack
 
