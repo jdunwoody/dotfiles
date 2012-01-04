@@ -62,6 +62,11 @@ autocmd BufNewFile,BufRead * match Error /\(  \+\t\@=\)\|\(^\(\t\+\)\zs \ze[^ *]
 " autocmd BufEnter * NERDTreeMirror
 autocmd VimEnter * wincmd p
 
+" Tab completion
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,tmp/*,coverage/*,public/*,spec/javascripts/generated/*,db/bootstrap/*,vendor/gems/:
+
+" Command-T configuration
+let g:CommandTMaxFiles=20000
 
 "nnoremap <up> <nop>
 "nnoremap <down> <nop>
@@ -111,7 +116,6 @@ autocmd FocusLost * :wa
 autocmd FocusLost,BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
 nmap <leader>t :CommandT<cr>
-let g:CommandTMaxFiles=25000
 " Ack
 nnoremap <leader>a :Ack
 
