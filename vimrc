@@ -86,6 +86,7 @@ au FocusLost * :call <SID>StripTrailingWhitespaces()
 
 :tabnext
 
+nmap Y y$
 
 "" tab left & right
 " same for macvim (cmd key, because alt doesn't work)
